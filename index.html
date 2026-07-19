@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI &amp; App Development Concepts</title>
+<meta name="description" content="An interactive slide deck teaching the core concepts behind modern AI applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated ambient network background -->
+<div class="bg-layer" aria-hidden="true">
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow bg-glow--a"></div>
+  <div class="bg-glow bg-glow--b"></div>
+</div>
+
+<!-- Skip link for accessibility -->
+<a class="skip-link" href="#main-slide">Skip to content</a>
+
+<div class="app" id="app">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <button class="home-btn" id="homeBtn" aria-label="Go to home slide">
+      <span class="home-btn__mark">◆</span>
+      <span class="home-btn__text">AI &amp; App Concepts</span>
+    </button>
+
+    <div class="progress-wrap" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100" id="progressBar">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label" id="progressLabel">0%</span>
+    </div>
+
+    <div class="score-chip" id="scoreChip" title="Quiz score">
+      <span class="score-chip__icon">★</span>
+      <span id="scoreText">0 / 0</span>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle topic list" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" aria-label="Topic navigation">
+      <p class="sidebar__label">Topics</p>
+      <ol class="sidebar__list" id="sidebarList"></ol>
+    </nav>
+
+    <!-- Main slide viewport -->
+    <main class="stage" id="main-slide">
+      <div class="slide-number" id="slideNumber" aria-hidden="true"></div>
+      <div class="slides" id="slides"></div>
+
+      <!-- Nav controls -->
+      <div class="controls">
+        <button class="nav-btn nav-btn--prev" id="prevBtn" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Prev</span>
+        </button>
+        <div class="controls__hint" id="controlsHint">Use ← → or swipe</div>
+        <button class="nav-btn nav-btn--next" id="nextBtn" aria-label="Next slide">
+          <span>Next</span>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Confetti canvas overlay -->
+<canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
